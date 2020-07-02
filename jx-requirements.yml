@@ -7,8 +7,10 @@ cluster:
   devEnvApprovers:
   - yejiayu
   environmentGitOwner: muta-robot
+  environmentGitPublic: true
   gitKind: github
   gitName: github
+  gitPublic: true
   gitServer: https://github.com
   namespace: jx
   provider: eks
@@ -16,7 +18,7 @@ cluster:
   registry: docker.io
 environments:
 - ingress:
-    domain: 18.166.100.96.nip.io
+    domain: 18.163.209.142.nip.io
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
@@ -47,7 +49,7 @@ environments:
   repository: environment-muta-cicd-production
 gitops: true
 ingress:
-  domain: 18.166.100.96.nip.io
+  domain: 18.163.209.142.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
