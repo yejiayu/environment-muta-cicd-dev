@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: nervosnetwork
+    provider: github
+    repository: muta
+  name: nervosnetwork-muta
+spec:
+  description: Imported application for nervosnetwork/muta
+  httpCloneURL: https://github.com/nervosnetwork/muta.git
+  org: nervosnetwork
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: muta
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/nervosnetwork/muta.git
