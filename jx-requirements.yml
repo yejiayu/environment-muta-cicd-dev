@@ -6,7 +6,7 @@ cluster:
   clusterName: muta-cicd
   devEnvApprovers:
   - yejiayu
-  environmentGitOwner: yejiayu
+  environmentGitOwner: muta-robot
   gitKind: github
   gitName: github
   gitServer: https://github.com
