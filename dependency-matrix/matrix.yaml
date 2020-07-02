@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: nervosnetwork
+  repo: muta
+  url: https://github.com/nervosnetwork/muta.git
+  version: ""
+  versionURL: ""
