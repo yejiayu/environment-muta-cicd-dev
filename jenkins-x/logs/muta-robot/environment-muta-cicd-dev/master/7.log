@@ -1,0 +1,141 @@
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-credential-initializer-f5svc[0m
+{"level":"info","ts":1593768205.6457775,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593768205.6460178,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-j2qt6[0m
+{"level":"info","ts":1593768206.9335923,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1593768206.9342022,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-git-source-muta-robot-environment-muta-cic-qdfxk-56p8h[0m
+{"level":"info","ts":1593768217.00494,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593768218.4883113,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/**********/environment-muta-cicd-dev.git @ v0.0.7 in path /workspace/source"}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:c53e1cb6ff57c0f781619e1aefd7c7a16c74c021
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- yejiayu
+reviewers:
+- yejiayu
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Installing kubectl
+Downloading https://storage.googleapis.com/kubernetes-release/release/v1.16.5/bin/linux/amd64/kubectl to /builder/home/.**/bin/kubectl...
+Downloaded /builder/home/.**/bin/kubectl
+Installing helm
+Downloading https://get.helm.sh/helm-v2.12.2-linux-amd64.tar.gz to /builder/home/.**/bin/helm.tgz...
+Downloaded /builder/home/.**/bin/helm.tgz
+Installing helm secrets plugin
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.518
+using version 2.1.93 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME                          VERSION
+Kubernetes cluster            v1.14.9-eks-f459c0
+kubectl (installed in JX_BIN) v1.16.6-beta.0
+helm client                   2.12.2
+git                           2.21.1
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider eks
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Running in cluster, not recreating permissions
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 7
+creating the lock configmap **-lock-velero
+lock configmap **-lock-velero created
+cleaning the lock configmap **-lock-velero
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 7
+creating the lock configmap **-lock-velero
+lock configmap **-lock-velero created
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-598137180/velero-backups/requirements.yaml so not checking for missing versions
+cleaning the lock configmap **-lock-velero
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 7
+creating the lock configmap **-lock-kube-system
+lock configmap **-lock-kube-system created
+
+cleaning the lock configmap **-lock-kube-system
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+WARNING: Note that we have only tested TLS support on Google Container Engine with external-dns so far. This may not work!
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 7
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-qdfxk-7[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 7
+creating the lock configmap **-lock-cert-manager
+lock configmap **-lock-cert-manager created
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+
+cleaning the lock configmap **-lock-cert-manager
+error: upgrading helm chart '.': failed to run 'kubectl apply --recursive -f /tmp/helm-template-workdir-032674757/cm/output/namespaces/kube-system -l jenkins.io/chart-release=cm --namespace kube-system --wait --validate=false' command in directory '/tmp/**-helm-apply-055495594/cm', output: 'error: You must be logged in to the server (error when retrieving current configuration of:
+Resource: "rbac.authorization.k8s.io/v1beta1, Resource=roles", GroupVersionKind: "rbac.authorization.k8s.io/v1beta1, Kind=Role"
+Name: "cm-cainjector:leaderelection", Namespace: "kube-system"
+Object: &{map["apiVersion":"rbac.authorization.k8s.io/v1beta1" "kind":"Role" "metadata":map["annotations":map["jenkins.io/chart":"cm" "kubectl.kubernetes.io/last-applied-configuration":""] "labels":map["app":"cainjector" "app.kubernetes.io/instance":"cm" "app.kubernetes.io/managed-by":"Tiller" "app.kubernetes.io/name":"cainjector" "helm.sh/chart":"cainjector-v0.11.0" "jenkins.io/chart-release":"cm" "jenkins.io/namespace":"cert-manager" "jenkins.io/version":"7"] "name":"cm-cainjector:leaderelection" "namespace":"kube-system"] "rules":[map["apiGroups":[""] "resources":["configmaps"] "verbs":["get" "create" "update" "patch"]]]]}
+from server for: "/tmp/helm-template-workdir-032674757/cm/output/namespaces/kube-system/cm/charts/cert-manager/charts/cainjector/templates/part3-rbac.yaml": Unauthorized)
+error: You must be logged in to the server (error when retrieving current configuration of:
+Resource: "rbac.authorization.k8s.io/v1beta1, Resource=rolebindings", GroupVersionKind: "rbac.authorization.k8s.io/v1beta1, Kind=RoleBinding"
+Name: "cm-cainjector:leaderelection", Namespace: "kube-system"
+Object: &{map["apiVersion":"rbac.authorization.k8s.io/v1beta1" "kind":"RoleBinding" "metadata":map["annotations":map["jenkins.io/chart":"cm" "kubectl.kubernetes.io/last-applied-configuration":""] "labels":map["app":"cainjector" "app.kubernetes.io/instance":"cm" "app.kubernetes.io/managed-by":"Tiller" "app.kubernetes.io/name":"cainjector" "helm.sh/chart":"cainjector-v0.11.0" "jenkins.io/chart-release":"cm" "jenkins.io/namespace":"cert-manager" "jenkins.io/version":"7"] "name":"cm-cainjector:leaderelection" "namespace":"kube-system"] "roleRef":map["apiGroup":"rbac.authorization.k8s.io" "kind":"Role" "name":"cm-cainjector:leaderelection"] "subjects":[map["apiGroup":"" "kind":"ServiceAccount" "name":"cm-cainjector" "namespace":"cert-manager"]]]}
+from server for: "/tmp/helm-template-workdir-032674757/cm/output/namespaces/kube-system/cm/charts/cert-manager/charts/cainjector/templates/part7-rbac.yaml": Unauthorized)
+error: You must be logged in to the server (error when retrieving current configuration of:
+Resource: "rbac.authorization.k8s.io/v1beta1, Resource=roles", GroupVersionKind: "rbac.authorization.k8s.io/v1beta1, Kind=Role"
+Name: "cm-cert-manager:leaderelection", Namespace: "kube-system"
+Object: &{map["apiVersion":"rbac.authorization.k8s.io/v1beta1" "kind":"Role" "metadata":map["annotations":map["jenkins.io/chart":"cm" "kubectl.kubernetes.io/last-applied-configuration":""] "labels":map["app":"cert-manager" "app.kubernetes.io/instance":"cm" "app.kubernetes.io/managed-by":"Tiller" "app.kubernetes.io/name":"cert-manager" "helm.sh/chart":"cert-manager-v0.11.0" "jenkins.io/chart-release":"cm" "jenkins.io/namespace":"cert-manager" "jenkins.io/version":"7"] "name":"cm-cert-manager:leaderelection" "namespace":"kube-system"] "rules":[map["apiGroups":[""] "resources":["configmaps"] "verbs":["get" "create" "update" "patch"]]]]}
+from server for: "/tmp/helm-template-workdir-032674757/cm/output/namespaces/kube-system/cm/charts/cert-manager/templates/part0-rbac.yaml": Unauthorized)
+error: You must be logged in to the server (error when retrieving current configuration of:
+Resource: "rbac.authorization.k8s.io/v1beta1, Resource=rolebindings", GroupVersionKind: "rbac.authorization.k8s.io/v1beta1, Kind=RoleBinding"
+Name: "cm-cert-manager:leaderelection", Namespace: "kube-system"
+Object: &{map["apiVersion":"rbac.authorization.k8s.io/v1beta1" "kind":"RoleBinding" "metadata":map["annotations":map["jenkins.io/chart":"cm" "kubectl.kubernetes.io/last-applied-configuration":""] "labels":map["app":"cert-manager" "app.kubernetes.io/instance":"cm" "app.kubernetes.io/managed-by":"Tiller" "app.kubernetes.io/name":"cert-manager" "helm.sh/chart":"cert-manager-v0.11.0" "jenkins.io/chart-release":"cm" "jenkins.io/namespace":"cert-manager" "jenkins.io/version":"7"] "name":"cm-cert-manager:leaderelection" "namespace":"kube-system"] "roleRef":map["apiGroup":"rbac.authorization.k8s.io" "kind":"Role" "name":"cm-cert-manager:leaderelection"] "subjects":[map["apiGroup":"" "kind":"ServiceAccount" "name":"cm-cert-manager" "namespace":"cert-manager"]]]}
+from server for: "/tmp/helm-template-workdir-032674757/cm/output/namespaces/kube-system/cm/charts/cert-manager/templates/part1-rbac.yaml": Unauthorized)'
+[31m
+Pipeline failed on stage 'release' : container 'step-install-cert-manager'. The execution of the pipeline has stopped.[0m
