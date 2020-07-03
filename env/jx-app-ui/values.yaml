@@ -1,2 +1,8 @@
 jxui:
   enableTLS: true
+  ingress:
+    create: true
+    domain: muta-devops.muta.dev
+    subdomain: dashboard
+  sso:
+    create: false
