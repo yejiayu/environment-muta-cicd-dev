@@ -18,7 +18,7 @@ cluster:
   registry: docker.io
 environments:
 - ingress:
-    domain: 18.166.100.96.nip.io
+    domain: 18.163.209.142.nip.io
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
@@ -49,7 +49,7 @@ environments:
   repository: environment-muta-cicd-production
 gitops: true
 ingress:
-  domain: 18.166.100.96.nip.io
+  domain: 18.163.209.142.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
@@ -79,4 +79,4 @@ velero:
 versionStream:
   ref: v1.0.518
   url: https://github.com/jenkins-x/jenkins-x-versions.git
-webhook: prow
+webhook: lighthouse
