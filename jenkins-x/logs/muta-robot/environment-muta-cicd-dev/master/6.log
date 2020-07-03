@@ -1,0 +1,266 @@
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-credential-initializer-q4dnn[0m
+{"level":"info","ts":1593767360.1900387,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593767360.19026,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-lqvt5[0m
+{"level":"info","ts":1593767361.1342347,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1593767361.1348226,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-git-source-muta-robot-environment-muta-cic-mmdjz-ms9vw[0m
+{"level":"info","ts":1593767370.2217743,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593767371.7042298,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/**********/environment-muta-cicd-dev.git @ v0.0.6 in path /workspace/source"}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5d1a9513ae2104fd6e11f086a3df466197074318
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- yejiayu
+reviewers:
+- yejiayu
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Installing kubectl
+Downloading https://storage.googleapis.com/kubernetes-release/release/v1.16.5/bin/linux/amd64/kubectl to /builder/home/.**/bin/kubectl...
+Downloaded /builder/home/.**/bin/kubectl
+Installing helm
+Downloading https://get.helm.sh/helm-v2.12.2-linux-amd64.tar.gz to /builder/home/.**/bin/helm.tgz...
+Downloaded /builder/home/.**/bin/helm.tgz
+Installing helm secrets plugin
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.518
+using version 2.1.93 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME                          VERSION
+Kubernetes cluster            v1.14.9-eks-f459c0
+kubectl (installed in JX_BIN) v1.16.6-beta.0
+helm client                   2.12.2
+git                           2.21.1
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider eks
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Running in cluster, not recreating permissions
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-velero
+lock configmap **-lock-velero created
+cleaning the lock configmap **-lock-velero
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-velero
+lock configmap **-lock-velero created
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-385132787/velero-backups/requirements.yaml so not checking for missing versions
+cleaning the lock configmap **-lock-velero
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-kube-system
+lock configmap **-lock-kube-system created
+
+cleaning the lock configmap **-lock-kube-system
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+WARNING: Note that we have only tested TLS support on Google Container Engine with external-dns so far. This may not work!
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-cert-manager
+lock configmap **-lock-cert-manager created
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+
+
+cleaning the lock configmap **-lock-cert-manager
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-922477509/acme/requirements.yaml so not checking for missing versions
+
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+Not attempting to boot Vault as using secret storage: local
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme local found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name muta-cicd found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+Jenkins X Admin Username ******* [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username ********** [Automatically accepted existing value]
+Pipeline bot Git email address yejiayu@cryptape.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure non default Docker Registry? true [Automatically accepted existing value]
+Docker Registry Url https://index.docker.io/v1/ [Automatically accepted existing value]
+Docker Registry username ******* [Automatically accepted existing value]
+Docker Registry password *** [Automatically accepted existing value]
+Docker Registry email yejiayu.fe@gmail.com [Automatically accepted existing value]
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-create-jx-auth-config[0m
+Saved the rendered configuration into templates/**-auth-configmap.yaml file
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-jx-auth-config[0m
+Modified file /workspace/source/systems/**-auth/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/**-auth-configmap.yaml
+No requirements file: /tmp/**-helm-apply-043877119/**-auth/requirements.yaml so not checking for missing versions
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/eks/values.tmpl.yaml
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/**********/environment-muta-cicd-dev.git
+Validating git repository for production environment at URL https://github.com/**********/environment-muta-cicd-production.git
+Using Git provider github at https://github.com
+? Using Git user name: **********
+? Using organisation: **********
+Creating repository **********/environment-muta-cicd-production
+Git repository **********/environment-muta-cicd-production already exists
+Pushed Git repository to https://github.com/**********/environment-muta-cicd-production
+
+Validating git repository for staging environment at URL https://github.com/**********/environment-muta-cicd-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: **********
+? Using organisation: **********
+Creating repository **********/environment-muta-cicd-staging
+Git repository **********/environment-muta-cicd-staging already exists
+Pushed Git repository to https://github.com/**********/environment-muta-cicd-staging
+
+Environment git repositories look good
+
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-repositories[0m
+Modified file /workspace/source/repositories/Chart.yaml to set the chart to version 6
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/default-group.yaml
+Ignoring templates/nervosnetwork-muta-sr.yaml
+No requirements file: /tmp/**-helm-apply-128026220/repositories/requirements.yaml so not checking for missing versions
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url https://hook-**.muta-devops.muta.dev
+Updating webhooks for Owner: ********** and Repository: environment-muta-cicd-dev in git server: https://github.com
+Checking hooks for repository **********/environment-muta-cicd-dev with user **********
+Found matching hook for url https://hook-**.muta-devops.muta.dev/hook
+Updating GitHub webhook for **********/environment-muta-cicd-dev for url https://hook-**.muta-devops.muta.dev/hook
+Updating webhooks for Owner: ********** and Repository: environment-muta-cicd-production in git server: https://github.com
+Checking hooks for repository **********/environment-muta-cicd-production with user **********
+Found matching hook for url https://hook-**.muta-devops.muta.dev/hook
+Updating GitHub webhook for **********/environment-muta-cicd-production for url https://hook-**.muta-devops.muta.dev/hook
+Updating webhooks for Owner: ********** and Repository: environment-muta-cicd-staging in git server: https://github.com
+Checking hooks for repository **********/environment-muta-cicd-staging with user **********
+Found matching hook for url https://hook-**.muta-devops.muta.dev/hook
+Updating GitHub webhook for **********/environment-muta-cicd-staging for url https://hook-**.muta-devops.muta.dev/hook
+Updating webhooks for Owner: ********** and Repository: test in git server: https://github.com
+Checking hooks for repository **********/test with user **********
+Found matching hook for url https://hook-**.muta-devops.muta.dev/hook
+Updating GitHub webhook for **********/test for url https://hook-**.muta-devops.muta.dev/hook
+Updating webhooks for Owner: nervosnetwork and Repository: muta in git server: https://github.com
+Checking hooks for repository nervosnetwork/muta with user **********
+Found matching hook for url https://hook-**.muta-devops.muta.dev/hook
+Updating GitHub webhook for nervosnetwork/muta for url https://hook-**.muta-devops.muta.dev/hook
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-mmdjz-6[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                         STATUS
+exdns-external-dns-6d498c8b55-9nlzt         Running
+jenkins-x-chartmuseum-d87cbb789-ftrb2       Running
+jenkins-x-controllerbuild-85748fd8ff-6bfww  Running
+jenkins-x-controllerrole-5d5f68999d-l26ss   Running
+jenkins-x-gcactivities-1593765000-wp4sz     Succeeded
+jenkins-x-gcactivities-1593766800-b8cfm     Succeeded
+jenkins-x-gcpods-1593765000-cggmj           Succeeded
+jenkins-x-gcpods-1593766800-f7k9t           Succeeded
+jenkins-x-gcpreviews-1593766800-mhq6s       Succeeded
+jenkins-x-heapster-584dfc6999-nxm4v         Running
+jenkins-x-**ui-6c4c85774c-rc5ct             Running
+jenkins-x-nexus-b69b7745b-tl455             Running
+lighthouse-foghorn-85576d8545-scd8d         Running
+lighthouse-gc-jobs-1593765000-hs8z9         Succeeded
+lighthouse-gc-jobs-1593766800-cszs7         Succeeded
+lighthouse-keeper-66867974dc-lc2xf          Running
+lighthouse-webhooks-7c6bd7d6dd-x22pv        Running
+lighthouse-webhooks-7c6bd7d6dd-x5wvb        Running
+tekton-pipelines-controller-88c7cd9d5-c2djn Running
+Verifying the git config
+Verifying username ********** at git server github at https://github.com
+Found 0 organisations in git server https://github.com: 
+Validated pipeline user ********** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
