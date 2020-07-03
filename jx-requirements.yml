@@ -18,13 +18,14 @@ cluster:
   registry: docker.io
 environments:
 - ingress:
-    domain: 18.163.209.142.nip.io
-    externalDNS: false
+    domain: muta-devops.muta.dev
+    externalDNS: true
+    ignoreLoadBalancer: true
     namespaceSubDomain: -jx.
     tls:
       email: yejiayu.fe@gmail.com
-      enabled: false
-      production: false
+      enabled: true
+      production: true
   key: dev
   repository: environment-muta-cicd-dev
 - ingress:
@@ -49,13 +50,14 @@ environments:
   repository: environment-muta-cicd-production
 gitops: true
 ingress:
-  domain: 18.163.209.142.nip.io
-  externalDNS: false
+  domain: muta-devops.muta.dev
+  externalDNS: true
+  ignoreLoadBalancer: true
   namespaceSubDomain: -jx.
   tls:
     email: yejiayu.fe@gmail.com
-    enabled: false
-    production: false
+    enabled: true
+    production: true
 kaniko: true
 repository: nexus
 secretStorage: local
