@@ -22,7 +22,7 @@ environments:
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
-      email: ""
+      email: yejiayu.fe@gmail.com
       enabled: false
       production: false
   key: dev
@@ -53,7 +53,7 @@ ingress:
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
-    email: ""
+    email: yejiayu.fe@gmail.com
     enabled: false
     production: false
 kaniko: true
