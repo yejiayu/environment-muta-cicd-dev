@@ -1,0 +1,79 @@
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-credential-initializer-w6n5r[0m
+{"level":"info","ts":1593768303.483324,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593768303.4836154,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-4wxlg[0m
+{"level":"info","ts":1593768304.5420365,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1593768304.542787,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-git-source-muta-robot-environment-muta-cic-j27xj-cwtwt[0m
+{"level":"info","ts":1593768314.6903248,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1593768316.2402048,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/**********/environment-muta-cicd-dev.git @ v0.0.8 in path /workspace/source"}
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:54129e8032391bb810826bcb48ad78fa62ae7e3d
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- yejiayu
+reviewers:
+- yejiayu
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Installing kubectl
+Downloading https://storage.googleapis.com/kubernetes-release/release/v1.16.5/bin/linux/amd64/kubectl to /builder/home/.**/bin/kubectl...
+Downloaded /builder/home/.**/bin/kubectl
+Installing helm
+Downloading https://get.helm.sh/helm-v2.12.2-linux-amd64.tar.gz to /builder/home/.**/bin/helm.tgz...
+Downloaded /builder/home/.**/bin/helm.tgz
+Installing helm secrets plugin
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.518
+using version 2.1.93 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME                          VERSION
+Kubernetes cluster            v1.14.9-eks-f459c0
+kubectl (installed in JX_BIN) v1.16.6-beta.0
+helm client                   2.12.2
+git                           2.21.1
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider eks
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider eks
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Running in cluster, not recreating permissions
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mmuta-robot-environment-muta-cic-j27xj-8[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 8
+creating the lock configmap **-lock-velero
+lock configmap **-lock-velero created
+cleaning the lock configmap **-lock-velero
+WARNING: failed to cleanup the lock configmap **-lock-velero: Unauthorized
+error: upgrading helm chart '.': error creating namespace: Failed to create Namespace velero Unauthorized
+[31m
+Pipeline failed on stage 'release' : container 'step-install-velero'. The execution of the pipeline has stopped.[0m
