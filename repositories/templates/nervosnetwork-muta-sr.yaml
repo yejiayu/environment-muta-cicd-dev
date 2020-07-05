@@ -2,10 +2,10 @@ apiVersion: jenkins.io/v1
 kind: SourceRepository
 metadata:
   annotations:
-    jenkins.io/last-build-number-for-master: "1"
+    jenkins.io/last-build-number-for-master: "2"
     jenkins.io/last-build-number-for-pr-315: "2"
     jenkins.io/last-build-number-for-pr-331: "1"
-    jenkins.io/last-build-number-for-pr-336: "9"
+    jenkins.io/last-build-number-for-pr-336: "21"
   creationTimestamp: null
   labels:
     jenkins.io/chart-release: repos
@@ -25,5 +25,5 @@ spec:
   repo: muta
   scheduler:
     kind: ""
-    name: jx-scheduler
+    name: muta-scheduler
   url: https://github.com/nervosnetwork/muta.git
