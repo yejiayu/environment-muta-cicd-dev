@@ -41,8 +41,8 @@ spec:
     entries:
     - agent: tekton
       alwaysRun: true
-      context: integration
-      name: integration
+      context: e2e
+      name: e2e
       policy:
         requiredStatusChecks:
           contexts:
@@ -64,8 +64,8 @@ spec:
           - needs-rebase
           - needs-security-review
       report: true
-      rerunCommand: /test integration
-      trigger: (?m)^/test( all| integration),?(\s+|$)
+      rerunCommand: /test e2e
+      trigger: (?m)^/test( all| e2e),?(\s+|$)
     - agent: tekton
       alwaysRun: true
       context: fmt
