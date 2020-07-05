@@ -46,3 +46,7 @@ cluster:
     create: false
 {{- end }}
 {{- end }}
+
+# Specifying environment variable for link to build reports
+env:
+  LIGHTHOUSE_REPORT_URL_BASE: "https://dashboard{{.Requirements.ingress.namespaceSubDomain}}{{.Requirements.ingress.domain}}"
