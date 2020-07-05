@@ -1,0 +1,129 @@
+branch-protection:
+  orgs:
+    muta-robot:
+      repos:
+        environment-muta-cicd-dev:
+          required_status_checks:
+            contexts:
+            - promotion-build
+        environment-muta-cicd-production:
+          required_status_checks:
+            contexts:
+            - promotion-build
+        environment-muta-cicd-staging:
+          required_status_checks:
+            contexts:
+            - promotion-build
+    nervosnetwork:
+      repos:
+        muta:
+          required_status_checks:
+            contexts:
+            - pr-build
+  protect-tested-repos: true
+deck:
+  spyglass: {}
+gerrit: {}
+github:
+  LinkURL: null
+owners_dir_blacklist:
+  default: null
+  repos: null
+plank: {}
+pod_namespace: jx
+postsubmits:
+  muta-robot/environment-muta-cicd-dev:
+  - agent: tekton
+    branches:
+    - master
+    name: promotion
+    skip_report: true
+  muta-robot/environment-muta-cicd-production:
+  - agent: tekton
+    branches:
+    - master
+    name: promotion
+    skip_report: true
+  muta-robot/environment-muta-cicd-staging:
+  - agent: tekton
+    branches:
+    - master
+    name: promotion
+    skip_report: true
+  nervosnetwork/muta:
+  - agent: tekton
+    branches:
+    - master
+    name: release
+    skip_report: true
+presubmits:
+  muta-robot/environment-muta-cicd-dev:
+  - agent: tekton
+    always_run: true
+    context: promotion-build
+    name: promotion-build
+    rerun_command: /test this
+    trigger: (?m)^/test( all| this),?(\s+|$)
+  muta-robot/environment-muta-cicd-production:
+  - agent: tekton
+    always_run: true
+    context: promotion-build
+    name: promotion-build
+    rerun_command: /test this
+    trigger: (?m)^/test( all| this),?(\s+|$)
+  muta-robot/environment-muta-cicd-staging:
+  - agent: tekton
+    always_run: true
+    context: promotion-build
+    name: promotion-build
+    rerun_command: /test this
+    trigger: (?m)^/test( all| this),?(\s+|$)
+  nervosnetwork/muta:
+  - agent: tekton
+    always_run: true
+    context: pr-build
+    name: pr-build
+    rerun_command: /test this
+    trigger: (?m)^/test( all| this),?(\s+|$)
+prowjob_namespace: jx
+push_gateway:
+  serve_metrics: false
+sinker: {}
+tide:
+  context_options:
+    from-branch-protection: true
+    required-if-present-contexts: null
+    skip-unknown-contexts: false
+  merge_method:
+    muta-robot/environment-muta-cicd-dev: merge
+    muta-robot/environment-muta-cicd-production: merge
+    muta-robot/environment-muta-cicd-staging: merge
+    nervosnetwork/muta: merge
+  queries:
+  - labels:
+    - approved
+    missingLabels:
+    - do-not-merge
+    - do-not-merge/hold
+    - do-not-merge/work-in-progress
+    - needs-ok-to-test
+    - needs-rebase
+    repos:
+    - muta-robot/environment-muta-cicd-dev
+    - muta-robot/environment-muta-cicd-production
+    - muta-robot/environment-muta-cicd-staging
+    - nervosnetwork/muta
+  - labels:
+    - updatebot
+    missingLabels:
+    - do-not-merge
+    - do-not-merge/hold
+    - do-not-merge/work-in-progress
+    - needs-ok-to-test
+    - needs-rebase
+    repos:
+    - muta-robot/environment-muta-cicd-dev
+    - muta-robot/environment-muta-cicd-production
+    - muta-robot/environment-muta-cicd-staging
+    - nervosnetwork/muta
+  target_url: http://deck-jx.muta-devops.muta.dev

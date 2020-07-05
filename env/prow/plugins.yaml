@@ -1,0 +1,122 @@
+approve:
+- lgtm_acts_as_approve: true
+  repos:
+  - muta-robot/environment-muta-cicd-dev
+  require_self_approval: true
+- lgtm_acts_as_approve: true
+  repos:
+  - muta-robot/environment-muta-cicd-production
+  require_self_approval: true
+- lgtm_acts_as_approve: true
+  repos:
+  - muta-robot/environment-muta-cicd-staging
+  require_self_approval: true
+- lgtm_acts_as_approve: true
+  repos:
+  - nervosnetwork/muta
+  require_self_approval: true
+blunderbuss: {}
+cat: {}
+cherry_pick_unapproved: {}
+config_updater:
+  maps:
+    env/prow/config.yaml:
+      name: config
+    env/prow/plugins.yaml:
+      name: plugins
+heart: {}
+label:
+  additional_labels: null
+owners: {}
+plugins:
+  muta-robot/environment-muta-cicd-dev:
+  - config-updater
+  - approve
+  - assign
+  - blunderbuss
+  - help
+  - hold
+  - lgtm
+  - lifecycle
+  - size
+  - trigger
+  - wip
+  - heart
+  - cat
+  - override
+  - dog
+  - pony
+  muta-robot/environment-muta-cicd-production:
+  - config-updater
+  - approve
+  - assign
+  - blunderbuss
+  - help
+  - hold
+  - lgtm
+  - lifecycle
+  - size
+  - trigger
+  - wip
+  - heart
+  - cat
+  - override
+  - dog
+  - pony
+  muta-robot/environment-muta-cicd-staging:
+  - config-updater
+  - approve
+  - assign
+  - blunderbuss
+  - help
+  - hold
+  - lgtm
+  - lifecycle
+  - size
+  - trigger
+  - wip
+  - heart
+  - cat
+  - override
+  - dog
+  - pony
+  nervosnetwork/muta:
+  - approve
+  - assign
+  - blunderbuss
+  - help
+  - hold
+  - lgtm
+  - lifecycle
+  - override
+  - size
+  - trigger
+  - wip
+  - heart
+  - cat
+  - dog
+  - pony
+requiresig: {}
+sigmention: {}
+size:
+  l: 0
+  m: 0
+  s: 0
+  xl: 0
+  xxl: 0
+slack: {}
+triggers:
+- repos:
+  - muta-robot/environment-muta-cicd-dev
+  trusted_org: muta-robot
+- repos:
+  - muta-robot/environment-muta-cicd-production
+  trusted_org: muta-robot
+- repos:
+  - muta-robot/environment-muta-cicd-staging
+  trusted_org: muta-robot
+- repos:
+  - nervosnetwork/muta
+  trusted_org: muta-robot
+welcome:
+- message_template: Welcome
