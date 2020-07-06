@@ -5,12 +5,12 @@ metadata:
     jenkins.io/last-build-number-for-master: "2"
     jenkins.io/last-build-number-for-pr-315: "2"
     jenkins.io/last-build-number-for-pr-331: "1"
-    jenkins.io/last-build-number-for-pr-336: "21"
+    jenkins.io/last-build-number-for-pr-336: "24"
   creationTimestamp: null
   labels:
     jenkins.io/chart-release: repos
     jenkins.io/namespace: jx
-    jenkins.io/version: "12"
+    jenkins.io/version: "13"
     owner: nervosnetwork
     provider: github
     repository: muta
