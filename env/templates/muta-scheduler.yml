@@ -6,7 +6,8 @@ spec:
   lgtm:
     reviewActsAsLgtm: true
   merger:
-    mergeMethod: rebase
+    mergeMethod: squash
+    targetUrl: https://dashboard-jx.muta-devops.muta.dev
   plugins:
     entries:
       - label
@@ -19,27 +20,16 @@ spec:
         - master
       name: release
       context: ""
-      policy:
-        requiredStatusChecks:
-          contexts:
-            entries:
-            # - whitesource
-    # - agent: tekton
-    #   branches:
-    #     entries:
-    #     - master
-    #   cluster: ""
-    #   context: whitesource
-    #   labels: {}
-    #   maxConcurrency: 0
-    #   name: whitesource
-    #   report: false
-    #   runIfChanged: ""
-    #   skipBranches: {}
+      # policy:
+      #   requiredStatusChecks:
+      #     contexts:
+      #       entries:
+      #       - whitesource
   presubmits:
-    replace: true
+    replace: false
     entries:
     - agent: tekton
+      optional: true
       alwaysRun: true
       context: e2e
       name: e2e
@@ -47,9 +37,9 @@ spec:
         requiredStatusChecks:
           contexts:
             entries:
-              - fmt
-              - clippy
-              - unit
+            - fmt
+            - clippy
+            - unit
       queries:
       - labels:
           entries:
@@ -67,34 +57,36 @@ spec:
       rerunCommand: /test e2e
       trigger: (?m)^/test( all| e2e),?(\s+|$)
     - agent: tekton
+      optional: true
       alwaysRun: true
       context: fmt
       name: fmt
       queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-          - needs-security-review
+        - labels:
+            entries:
+              - approved
+              - lgtm
+          missingLabels:
+            entries:
+              - do-not-merge
+              - do-not-merge/hold
+              - do-not-merge/work-in-progress
+              - needs-ok-to-test
+              - needs-rebase
+              - needs-security-review
       report: true
       rerunCommand: /test fmt
       trigger: (?m)^/test( all| fmt),?(\s+|$)
     - agent: tekton
+      optional: true
       alwaysRun: true
       context: clippy
       name: clippy
       queries:
       - labels:
           entries:
-          - approved
-          - lgtm
+           - approved
+           - lgtm
         missingLabels:
           entries:
           - do-not-merge
@@ -102,11 +94,11 @@ spec:
           - do-not-merge/work-in-progress
           - needs-ok-to-test
           - needs-rebase
-          - needs-security-review
       report: true
       rerunCommand: /test clippy
       trigger: (?m)^/test( all| clippy),?(\s+|$)
     - agent: tekton
+      optional: true
       alwaysRun: true
       context: unit
       name: unit
@@ -126,4 +118,3 @@ spec:
       report: true
       rerunCommand: /test unit
       trigger: (?m)^/test( all| unit),?(\s+|$)
-

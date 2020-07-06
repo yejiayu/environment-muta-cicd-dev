@@ -1,0 +1,12 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepositoryGroup
+metadata:
+  name: muta-group
+spec:
+  scheduler:
+    apiVersion: jenkins.io/v1
+    kind: Scheduler
+    name: muta-scheduler
+  repositories: 
+  - name: nervosnetwork-muta
+    kind: SourceRepository

@@ -1,0 +1,130 @@
+apiVersion: jenkins.io/v1
+kind: Scheduler
+metadata:
+  annotations:
+    jenkins.io/chart: env
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"jenkins.io/v1","kind":"Scheduler","metadata":{"annotations":{"jenkins.io/chart":"env"},"creationTimestamp":null,"labels":{"jenkins.io/chart-release":"jenkins-x","jenkins.io/namespace":"jx","jenkins.io/version":"14"},"name":"default-scheduler","namespace":"jx"},"spec":{"approve":{"issueRequired":false,"lgtmActsAsApprove":true,"requireSelfApproval":true},"merger":{"blockerLabel":"","maxGoroutines":0,"mergeMethod":"merge","policy":{"fromBranchProtection":true,"optionalContexts":{},"requiredContexts":{},"requiredIfPresentContexts":{},"skipUnknownContexts":false},"prStatusBaseUrl":"","squashLabel":"","targetUrl":"http://deck-jx.muta-devops.muta.dev"},"plugins":{"entries":["approve","assign","blunderbuss","help","hold","lgtm","lifecycle","override","size","trigger","wip","heart","cat","dog","pony"]},"policy":{"protectTested":true},"postsubmits":{"entries":[{"agent":"tekton","branches":{"entries":["master"]},"cluster":"","context":"","labels":{},"maxConcurrency":0,"name":"release","report":false,"runIfChanged":"","skipBranches":{}}]},"presubmits":{"entries":[{"agent":"tekton","alwaysRun":true,"branches":{},"cluster":"","context":"pr-build","labels":{},"maxConcurrency":0,"mergeMethod":"","name":"pr-build","optional":false,"policy":{"Replace":false,"requiredStatusChecks":{"contexts":{"entries":["pr-build"]}}},"queries":[{"excludedBranches":{},"includedBranches":{},"labels":{"entries":["approved"]},"milestone":"","missingLabels":{"entries":["do-not-merge","do-not-merge/hold","do-not-merge/work-in-progress","needs-ok-to-test","needs-rebase"]},"reviewApprovedRequired":false},{"excludedBranches":{},"includedBranches":{},"labels":{"entries":["updatebot"]},"milestone":"","missingLabels":{"entries":["do-not-merge","do-not-merge/hold","do-not-merge/work-in-progress","needs-ok-to-test","needs-rebase"]},"reviewApprovedRequired":false}],"report":true,"rerunCommand":"/test this","runIfChanged":"","skipBranches":{},"trigger":"(?m)^/test( all| this),?(\\s+|$)"}]},"schedulerAgent":{"agent":"tekton"},"trigger":{"ignoreOkToTest":false,"joinOrgUrl":"","onlyOrgMembers":false,"trustedOrg":"muta-robot"},"welcome":[{"message_template":"Welcome"}]}}
+  creationTimestamp: "2020-07-03T13:28:04Z"
+  generation: 1
+  labels:
+    jenkins.io/chart-release: jenkins-x
+    jenkins.io/namespace: jx
+    jenkins.io/version: "14"
+  name: default-scheduler
+  namespace: jx
+  resourceVersion: "769467"
+  selfLink: /apis/jenkins.io/v1/namespaces/jx/schedulers/default-scheduler
+  uid: 06913081-bd31-11ea-9074-0a680382c446
+spec:
+  approve:
+    issueRequired: false
+    lgtmActsAsApprove: true
+    requireSelfApproval: true
+  merger:
+    blockerLabel: ""
+    maxGoroutines: 0
+    mergeMethod: merge
+    policy:
+      fromBranchProtection: true
+      optionalContexts: {}
+      requiredContexts: {}
+      requiredIfPresentContexts: {}
+      skipUnknownContexts: false
+    prStatusBaseUrl: ""
+    squashLabel: ""
+    targetUrl: http://deck-jx.muta-devops.muta.dev
+  plugins:
+    entries:
+    - approve
+    - assign
+    - blunderbuss
+    - help
+    - hold
+    - lgtm
+    - lifecycle
+    - override
+    - size
+    - trigger
+    - wip
+    - heart
+    - cat
+    - dog
+    - pony
+  policy:
+    protectTested: true
+  postsubmits:
+    entries:
+    - agent: tekton
+      branches:
+        entries:
+        - master
+      cluster: ""
+      context: ""
+      labels: {}
+      maxConcurrency: 0
+      name: release
+      report: false
+      runIfChanged: ""
+      skipBranches: {}
+  presubmits:
+    entries:
+    - agent: tekton
+      alwaysRun: true
+      branches: {}
+      cluster: ""
+      context: pr-build
+      labels: {}
+      maxConcurrency: 0
+      mergeMethod: ""
+      name: pr-build
+      optional: false
+      policy:
+        Replace: false
+        requiredStatusChecks:
+          contexts:
+            entries:
+            - pr-build
+      queries:
+      - excludedBranches: {}
+        includedBranches: {}
+        labels:
+          entries:
+          - approved
+        milestone: ""
+        missingLabels:
+          entries:
+          - do-not-merge
+          - do-not-merge/hold
+          - do-not-merge/work-in-progress
+          - needs-ok-to-test
+          - needs-rebase
+        reviewApprovedRequired: false
+      - excludedBranches: {}
+        includedBranches: {}
+        labels:
+          entries:
+          - updatebot
+        milestone: ""
+        missingLabels:
+          entries:
+          - do-not-merge
+          - do-not-merge/hold
+          - do-not-merge/work-in-progress
+          - needs-ok-to-test
+          - needs-rebase
+        reviewApprovedRequired: false
+      report: true
+      rerunCommand: /test this
+      runIfChanged: ""
+      skipBranches: {}
+      trigger: (?m)^/test( all| this),?(\s+|$)
+  schedulerAgent:
+    agent: tekton
+  trigger:
+    ignoreOkToTest: false
+    joinOrgUrl: ""
+    onlyOrgMembers: false
+    trustedOrg: muta-robot
+  welcome:
+  - message_template: Welcome

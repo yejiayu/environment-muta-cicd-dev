@@ -3,6 +3,6 @@ jxui:
   ingress:
     create: true
     domain: muta-devops.muta.dev
-    subdomain: dashboard
+    subdomain: dashboard-jx
   sso:
     create: false
