@@ -10,7 +10,7 @@ metadata:
   labels:
     jenkins.io/chart-release: repos
     jenkins.io/namespace: jx
-    jenkins.io/version: "8"
+    jenkins.io/version: "12"
     owner: nervosnetwork
     provider: github
     repository: muta
